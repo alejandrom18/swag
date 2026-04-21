@@ -1141,12 +1141,13 @@ footer .social img {
   animation: fadeInUp 0.6s ease-out;
 }
 
+
 /* ==========================================
    PÁGINAS DE AUTENTICACIÓN (LOGIN & REGISTER)
    ========================================== */
-.auth-page {
-  /* Ocupa toda la altura de la pantalla para centrar la tarjeta */
-  min-height: 100vh; 
+
+.register_section {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1154,72 +1155,104 @@ footer .social img {
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
 }
 
-.auth-card {
+.glass_form {
   background: var(--white);
   width: 100%;
-  max-width: 400px; /* Ancho base para móviles */
+  max-width: 450px; 
   padding: 2rem;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--gray-200);
 }
 
-.auth-card .logo-container {
+.glass_form a {
+  text-decoration: none;
+}
+
+.glass_form h1 {
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
 }
 
-.auth-card h2 {
-  font-size: 1.75rem;
-  color: var(--gray-900);
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.auth-card p.subtitle {
-  text-align: center;
-  color: var(--gray-500);
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-}
-
-/* Reutilizamos y ajustamos estilos del formulario del index */
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.input-group {
+.step1, .step2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.input-group label {
+.glass_form h3 {
+  font-size: 1.25rem;
+  color: var(--gray-900);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.glass_form label {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--gray-700);
+  margin-top: 0.5rem;
 }
 
-.input-group input {
+.glass_form input, 
+.glass_form select {
   width: 100%;
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
   border: 1px solid var(--gray-300);
   border-radius: var(--radius);
   background: var(--gray-50);
   transition: var(--transition);
+  font-family: inherit;
 }
 
-.input-group input:focus {
+/* Aviso legal en formularios */
+.auth-legal-notice {
+    font-size: 0.75rem; /* Tamaño pequeño tipo "letra chica" */
+    color: var(--gray-500);
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 1.25rem; /* Espacio antes del botón */
+    padding: 0 0.5rem;
+}
+
+.auth-legal-notice a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-legal-notice a:hover {
+    text-decoration: underline;
+}
+
+.glass_form input:focus,
+.glass_form select:focus {
   outline: none;
   background: var(--white);
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-.auth-submit {
+/* Campos de solo lectura (Resumen en Step 2) */
+.return_dates {
+  padding: 0.75rem 1rem;
+  background: var(--gray-100);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  min-height: 42px; /* Mantiene la altura aunque esté vacío */
+  border: 1px dashed var(--gray-300);
+}
+
+/* Botones del formulario */
+.nextBtn,
+.glass_form button[type="submit"] {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
@@ -1230,90 +1263,109 @@ footer .social img {
   margin-top: 1rem;
 }
 
-.auth-submit:hover {
+.nextBtn:hover,
+.glass_form button[type="submit"]:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.auth-links {
-  margin-top: 1.5rem;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--gray-600);
-}
-
-.auth-links a {
-  color: var(--primary);
+#backBtn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--gray-700);
+  background: var(--gray-200);
+  border-radius: var(--radius);
+  margin-top: 1rem;
 }
 
-.auth-links a:hover {
-  text-decoration: underline;
+#backBtn:hover {
+  background: var(--gray-300);
 }
 
 /* ==========================================
    PÁGINAS LEGALES (PRIVACY & TERMS)
    ========================================== */
-.legal-page {
-  padding: 4rem 1rem;
-  background-color: var(--gray-50);
-  min-height: calc(100vh - 200px); /* Ajusta según el tamaño de tu footer */
+.header_terms_button {
+  padding: 1rem 2rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.header_terms_button h1 {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .legal-container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 4rem auto;
   background: var(--white);
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--gray-200);
 }
 
-.legal-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.legal-header h1 {
+.legal-container h1 {
   font-size: clamp(2rem, 4vw, 2.5rem);
   color: var(--gray-900);
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-.legal-header p {
+.legal-container > p:first-of-type {
+  text-align: center;
   color: var(--gray-500);
-  font-size: 0.95rem;
+  margin-bottom: 2rem;
 }
 
-.legal-content h2 {
+.highlight-box {
+  background: #f0fdf4;
+  border-left: 4px solid var(--secondary);
+  padding: 1.5rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 2.5rem;
+}
+
+.highlight-box p {
+  color: var(--gray-800);
+  font-weight: 500;
+  margin: 0;
+}
+
+.legal-container h2 {
   font-size: 1.5rem;
   color: var(--primary);
   margin: 2.5rem 0 1rem;
+  border-bottom: 2px solid var(--gray-100);
+  padding-bottom: 0.5rem;
 }
 
-.legal-content h3 {
-  font-size: 1.2rem;
-  color: var(--gray-800);
-  margin: 1.5rem 0 0.75rem;
-}
-
-.legal-content p, 
-.legal-content li {
+.legal-container p, 
+.legal-container li {
   color: var(--gray-700);
   line-height: 1.8;
   margin-bottom: 1.25rem;
-  font-size: 1rem;
 }
 
-.legal-content ul {
+.legal-container ul {
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
+.footer_terms {
+  text-align: center;
+  padding: 2rem;
+  background: var(--gray-900);
+  color: var(--gray-400);
+}
 
 /* ==========================================
    MEDIA QUERIES (RESPONSIVE AL DETALLE)
@@ -1321,41 +1373,29 @@ footer .social img {
 
 /* TABLETS (Min 768px) */
 @media (min-width: 768px) {
-  .auth-card {
+  .glass_form {
     padding: 3rem;
-    max-width: 450px;
-  }
-  
-  .legal-container {
-    padding: 3rem 4rem;
-  }
-}
-
-/* LAPTOPS (Min 1024px) */
-@media (min-width: 1024px) {
-  .auth-card {
     max-width: 500px;
   }
   
-  .legal-page {
-    padding: 6rem 2rem;
+  .legal-container {
+    padding: 4rem;
   }
 }
 
-/* MONITORES DE 24+ PULGADAS (Min 1440px / 1920px) 
-   Esto evita que los contenedores se deformen o se vean "vacíos" en pantallas ultra anchas */
+/* MONITORES GRANDES Y ULTRA WIDE (Min 1440px / 1920px) */
 @media (min-width: 1440px) {
-  .auth-card {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño general para mejor lectura */
+  .glass_form {
+    transform: scale(1.05); /* Escala toda la tarjeta para que no se vea minúscula */
   }
 
   .legal-container {
-    max-width: 900px; /* Mantiene un ancho de lectura óptimo (no más de ~75 caracteres por línea) */
+    max-width: 900px;
   }
 }
 
 @media (min-width: 1920px) {
-  .auth-card {
+  .glass_form {
     transform: scale(1.1); 
   }
 
@@ -1364,10 +1404,12 @@ footer .social img {
     padding: 4rem 5rem;
   }
   
-  /* Incrementamos ligeramente la fuente base en pantallas gigantes para evitar forzar la vista */
-  .legal-content p, 
-  .legal-content li {
-    font-size: 1.05rem; 
+  .legal-container p, 
+  .legal-container li {
+    font-size: 1.05rem; /* Letra un poco más grande para facilitar la lectura en 24"+ */
   }
 }
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
 
