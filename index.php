@@ -271,7 +271,7 @@
             <div class="social">
                 <a href="https://www.facebook.com/swagbucks"><img src="social/facebook.svg" alt="facebook"></a>
                 <a href="https://www.instagram.com/swag_buckss/"><img src="social/instagram.svg" alt="instagram"></a>
-                <a href="www.trustpilot.com/review/www.swagbucks.com"><img src="social/trustpilot.svg" alt="trust"></a>
+                <a href="https://es.trustpilot.com/review/www.swagbucks.com"><img src="social/trustpilot.svg" alt="trust"></a>
                 <a href="https://x.com/Swagbucks"><img src="social/x.svg" alt="x"></a>
             </div>
     </footer>
