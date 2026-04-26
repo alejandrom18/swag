@@ -1411,5 +1411,22 @@ footer .social img {
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////*/
+/* Asegura que el widget ocupe todo el ancho del contenedor */
+.iti {
+    width: 100%;
+    margin-bottom: 15px;
+}
 
+/* Estilo para que el texto no choque con la bandera */
+.iti__country-list {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333; /* Texto oscuro para que se lea bien en la lista */
+    border-radius: 8px;
+}
+
+/* Ajuste de color para el código de país (si el fondo es oscuro) */
+.iti__selected-dial-code {
+    color: var(--white);
+    margin-left: 5px;
+}
 

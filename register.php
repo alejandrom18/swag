@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/css/intlTelInput.css">
     <link rel="stylesheet" href="style.css">
     <title>Register  | Swagbucks</title>
 </head>
@@ -40,7 +41,7 @@
                         <input type="text" name="direction"  required>
 
                         <label>Phone Number:</label>
-                        <input type="tel" name="phone" placeholder="+1..." required>
+                        <input type="tel" id="phone" name="phone"  required>
 
                         <label>Zip/Postal Code:</label>
                         <input type="text" name="zipCode" placeholder="e.g. 1011" required>
@@ -68,7 +69,8 @@
                     </section>
                 </form>
         </section>
-   
-        <script src="script_register.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/js/intlTelInput.min.js"></script>
+        <script src="countries.js"></script>
+        <script src="register_countries.js"></script>
 </body>
 </html>
