@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Register | Swagbocks</title>
+    <title>Register  | Swagbucks</title>
 </head>
 <body>
-
+            <?php
+            session_start();
+            // Recuperamos los datos o inicializamos un array vacío si no existen
+            $datos = $_SESSION['datos_registro'] ?? ['nombre' => '', 'segundo_nombre' => '', 'email' => ''];
+            ?>
         <section class="register_section">
             <form id="registrationForm" class="glass_form">
-                    <h1>Swagbocks</h1>
+                    <h1>Swagbucks</h1>
 
                     <section id="step1" class="step1">
-                        <h3>Step 1 : Personal Information</h3>
+                    
+                        <h3>Step 1: Personal Information</h3>
 
                         <label>First Name:</label>
-                        <p id="fnameR" name="fnameR" class="return_dates"></p>
+                        <input type="text" name="fname" value="<?php echo htmlspecialchars($datos['nombre']); ?>" readonly class="input-readonly">
 
                         <label>Middle Name:</label>
-                        <p id="snameR" name="snameR" class="return_dates"></p>
+                        <input type="text" name="sname" value="<?php echo htmlspecialchars($datos['segundo_nombre']); ?>" readonly class="input-readonly">
 
                         <label>Email Address:</label>
-                        <p id="emailR" name="emailR" class="return_dates"></p>
+                        <input type="email" name="email" value="<?php echo htmlspecialchars($datos['email']); ?>" readonly class="input-readonly">
 
                         <label>Country:</label>
                         <select name="country" id="selectCountry" required></select>

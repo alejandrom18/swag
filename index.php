@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="login_form">
-                    <form action="#" class="form">
+                    <form class="form" action="back.php" method="POST">
                         <h3>Join for free!</h3>
                         <label for="fname">First name</label>
                         <input type="text" id="fname" name="fname" required>
@@ -37,9 +37,9 @@
                         <input type="text" id="sname" name="sname" required>
 
                         <label for="email">Email</label>
-                        <input type="text" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required>
 
-                        <button type="submit" class="button-regis">Join for free!</button>
+                        <button type="submit" name="register" class="button-regis">Join for free!</button>
                         
 
                         <p>Already have an account?</p>
@@ -61,7 +61,7 @@
             <div class="color_blue">
             <p>Share your opinions by completing online surveys to earn extra cash. From single question polls to 30 minute market research questionnaires, there's always time to earn Swagbucks. </p>
             </div>
-            <button class="button_section_2">Sign up Now</button>
+            <button class="button_section_2" type="button">Sign up Now</button>
             </div>
 
             <div class="how">
@@ -70,7 +70,7 @@
             <div class="color_blue">
             <p>Swagbucks is one of the most extensive shopping rewards programs on the internet. Find coupons, promo codes, deals, and cash back offers to your favorite stores. Combine with your preferred credit card to earn additional cash back.</p>
             </div>
-            <button class="button_section_2">Sign up Now</button>
+            <button class="button_section_2" type="button">Sign up Now</button>
             </div>
 
             <div class="how">
@@ -79,7 +79,7 @@
             <div class="color_blue">
             <p>From web browser games to our popular Swagbucks Daily Trivia app, you can get paid to play games. Create or discover the latest short videos on Swagit. </p>
             </div>
-            <button class="button_section_2">Sign up Now</button>
+            <button class="button_section_2" type="button">Sign up Now</button>
             </div>
 
         </section>
@@ -275,6 +275,6 @@
                 <a href="https://x.com/Swagbucks"><img src="social/x.svg" alt="x"></a>
             </div>
     </footer>
-    <script src="script.js"></script>
+    
 </body>
 </html>
