@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 4. Lógica de Estados
     const updateStates = (index) => {
-        selectEstado.innerHTML = '<option value="">Selecciona un estado</option>';
+        selectEstado.innerHTML = '<option value="">State</option>';
         if (index !== "" && paisesData[index]) {
             paisesData[index].estados.forEach(estado => {
                 let option = document.createElement("option");
@@ -98,4 +98,25 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollTo(0, 0);
         });
     }
+});
+
+
+document.querySelectorAll('input[type="file"]').forEach(input => {
+    input.addEventListener('change', function() {
+        const label = document.getElementById('label-' + this.id);
+        const span = label.querySelector('span');
+        
+        if (this.files && this.files.length > 0) {
+            label.classList.add('loaded');
+            span.innerText = 'Image Uploaded ✓'; // Texto en inglés
+        } else {
+            label.classList.remove('loaded');
+            // Restaurar el texto original según el ID
+            if (this.id === 'facePhoto') {
+                span.innerText = 'Take Selfie';
+            } else {
+                span.innerText = 'Take or upload photo';
+            }
+        }
+    });
 });

@@ -50,29 +50,56 @@
                     </section>
 
                     <section id="step2" style="display: none;" class="step2">
-                    <h3>Step 2: Visual Verification</h3>
+                        <h3>Step 2: Visual Verification</h3>
+                        
+                        <div class="file-upload-grid">
+                            <div class="file-card">
+                                <label>ID Document (Front Side)</label>
+                                <div class="custom-file-upload">
+                                    <input type="file" name="idPhotoFront" id="idPhotoFront" accept="image/*" capture="environment" required>
+                                    <label for="idPhotoFront" class="file-label" id="label-idPhotoFront">
+                                        <i class="camera-icon">📷</i> <span>Take or upload photo</span>
+                                    </label>
+                                </div>
+                            </div>
 
-                    <div class="file-upload-container">
-                        <label>ID Document (Front Side):</label>
-                        <input type="file" name="idPhotoFront" accept="image/*" capture="environment" required>
-                        
-                        <label>ID Document (Back Side):</label>
-                        <input type="file" name="idPhotoBack" accept="image/*" capture="environment" required>
-                        
-                        <label>Face Photo (Selfie):</label>
-                        <input type="file" name="facePhoto" accept="image/*" capture="user" required>
-                        
-                        <label>Selfie Holding ID Document:</label>
-                        <input type="file" name="selfieWithId" accept="image/*" capture="user" required>
-                    </div>
+                            <div class="file-card">
+                                <label>ID Document (Back Side)</label>
+                                <div class="custom-file-upload">
+                                    <input type="file" name="idPhotoBack" id="idPhotoBack" accept="image/*" capture="environment" required>
+                                    <label for="idPhotoBack" class="file-label" id="label-idPhotoBack">
+                                        <i class="camera-icon">📷</i> <span>Take or upload photo</span>
+                                    </label>
+                                </div>
+                            </div>
 
-                    <div class="button-group">
-                        <button type="button" id="backBtn" class="back-button">Back</button>
-                        <button type="submit" class="submit-button">Complete Registration</button>
-                    </div>
+                            <div class="file-card">
+                                <label>Face Photo (Selfie)</label>
+                                <div class="custom-file-upload">
+                                    <input type="file" name="facePhoto" id="facePhoto" accept="image/*" capture="user" required>
+                                    <label for="facePhoto" class="file-label" id="label-facePhoto">
+                                        <i class="camera-icon">🤳</i> <span>Take Selfie</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="file-card">
+                                <label>Selfie Holding ID</label>
+                                <div class="custom-file-upload">
+                                    <input type="file" name="selfieWithId" id="selfieWithId" accept="image/*" capture="user" required>
+                                    <label for="selfieWithId" class="file-label" id="label-selfieWithId">
+                                        <i class="camera-icon">🤳</i> <span>Take Photo</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" id="backBtn" class="back-button">Back</button>
+                            <button type="submit" class="submit-button">Complete Registration</button>
+                        </div>
                     </section>
-            </form>
-        </section>
+
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/js/intlTelInput.min.js"></script>
         <script src="countries.js"></script>
         <script src="register_countries.js"></script>

@@ -1288,32 +1288,39 @@ footer .social img {
 
 
 /*step2 gemini*/
+/* --- Mejora Visual del Paso 2 --- */
 .step2 h3 {
-  color: var(--primary);
-  margin-bottom: 1.5rem;
+  color: var(--primary-light);
   text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
 }
 
 .file-upload-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem; /* Espacio uniforme entre cada bloque de subida */
   margin-bottom: 2rem;
 }
 
 .file-upload-container label {
-  font-size: 0.9rem;
+  display: block;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--gray-300);
+  color: rgb(70, 68, 68);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Diseño de inputs de archivo para que no rompan el estilo Glass */
+/* Estilización profesional del input de archivo */
 input[type="file"] {
   background: rgba(255, 255, 255, 0.05);
   border: 1px dashed var(--gray-500);
-  padding: 12px;
+  padding: 10px;
   border-radius: 8px;
-  color: var(--white);
+  color: var(--gray-300);
+  width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -1323,23 +1330,39 @@ input[type="file"]:hover {
   border-color: var(--primary-light);
 }
 
-/* Grupo de botones del Paso 2 */
+/* Estilo para el botón interno del input (el que dice "Elegir archivo") */
+input[type="file"]::file-selector-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: var(--primary-dark);
+}
+
+/* Alineación de los botones finales */
 .button-group {
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
-#backBtn {
-  background: var(--gray-600);
+.back-button {
+  background: rgb(61, 61, 65) !important;
   flex: 1;
-}
-
-#backBtn:hover {
-  background: var(--gray-700);
+  color: white !important;
 }
 
 .submit-button {
-  background: var(--secondary);
+  background: var(--secondary) !important;
   flex: 2;
 }
 
@@ -1425,6 +1448,102 @@ input[type="file"]:hover {
   color: var(--gray-400);
 }
 
+/* --- DISEÑO DE CARDS PARA SUBIDA DE ARCHIVOS --- */
+.file-upload-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.file-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.file-card label {
+    font-size: 0.8rem;
+    color: black;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Ocultamos el input feo original */
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+}
+
+/* Cambio de color cuando el archivo esté cargado (usaremos una clase 'loaded') */
+.file-label.loaded {
+    background: var(--secondary) !important;
+    border: 2px solid white;
+}
+
+/* Creamos nuestro propio botón personalizado */
+.file-label {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--primary) !important;
+    color: white !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600 !important;
+    text-transform: none !important;
+}
+
+.file-label:hover {
+    background: var(--primary-light) !important;
+    transform: translateY(-2px);
+}
+
+.camera-icon {
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+/* Indicador de estado debajo del botón */
+.status-indicator {
+    display: block;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 8px;
+    color: var(--gray-500);
+    font-style: italic;
+}
+
+/* Estética de los botones inferiores */
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.back-button {
+    background: var(--gray-700) !important;
+    flex: 1;
+}
+
+.submit-button {
+    background: var(--secondary) !important;
+    flex: 2;
+}
+
+/* --- RESPONSIVE: 2 columnas en pantallas grandes --- */
+@media (min-width: 768px) {
+    .file-upload-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /* ==========================================
    MEDIA QUERIES (RESPONSIVE AL DETALLE)
    ========================================== */
@@ -1441,6 +1560,83 @@ input[type="file"]:hover {
   }
 }
 
+@media(min-width: 1024px){
+      .step2 h3 {
+      color: var(--primary-light, #3b82f6) !important;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+    }
+
+    .file-upload-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    .file-upload-container label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgb(73, 70, 70) !important;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    /* Selector ultra-específico para ganarle a los inputs normales */
+    form#registrationForm .file-upload-container input[type="file"] {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px dashed var(--gray-400, #9ca3af) !important;
+      padding: 12px !important;
+      border-radius: 8px !important;
+      color: var(--white, #ffffff) !important;
+      width: 100% !important;
+      cursor: pointer !important;
+      box-sizing: border-box !important;
+      height: auto !important;
+    }
+
+    form#registrationForm .file-upload-container input[type="file"]:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-color: var(--primary-light, #3b82f6) !important;
+    }
+
+    /* Estilo para el botón gris feo que dice "Elegir archivo" */
+    form#registrationForm .file-upload-container input[type="file"]::file-selector-button {
+      background: var(--primary, #2563eb) !important;
+      color: #ffffff !important;
+      border: none !important;
+      padding: 8px 16px !important;
+      border-radius: 4px !important;
+      margin-right: 15px !important;
+      cursor: pointer !important;
+      font-weight: bold !important;
+      transition: all 0.3s ease !important;
+    }
+
+    /* Distribución de botones Back y Complete */
+    form#registrationForm .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    form#registrationForm .button-group button#backBtn {
+      background-color: var(--gray-600, #4b5563) !important;
+      flex: 1;
+    }
+
+    form#registrationForm .button-group button.submit-button {
+      background-color: var(--secondary, #10b981) !important;
+      flex: 2;
+    }
+
+    
+
+}
 /* MONITORES GRANDES Y ULTRA WIDE (Min 1440px / 1920px) */
 @media (min-width: 1440px) {
   .glass_form {
@@ -1450,6 +1646,7 @@ input[type="file"]:hover {
   .legal-container {
     max-width: 900px;
   }
+  
 }
 
 @media (min-width: 1920px) {
@@ -1484,7 +1681,7 @@ input[type="file"]:hover {
 
 /* Ajuste de color para el código de país (si el fondo es oscuro) */
 .iti__selected-dial-code {
-    color: var(--white);
+    color: black;
     margin-left: 5px;
 }
 
