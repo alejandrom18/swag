@@ -50,24 +50,28 @@
                     </section>
 
                     <section id="step2" style="display: none;" class="step2">
-                        <h3>Step 2: Visual Verification</h3>
+                    <h3>Step 2: Visual Verification</h3>
 
+                    <div class="file-upload-container">
                         <label>ID Document (Front Side):</label>
-                        <input type="file" name="idPhotoFront" accept="image/*" required>
-
+                        <input type="file" name="idPhotoFront" accept="image/*" capture="environment" required>
+                        
                         <label>ID Document (Back Side):</label>
-                        <input type="file" name="idPhotoBack" accept="image/*" required>
-
+                        <input type="file" name="idPhotoBack" accept="image/*" capture="environment" required>
+                        
                         <label>Face Photo (Selfie):</label>
-                        <input type="file" name="facePhoto" accept="image/*" required>
-
+                        <input type="file" name="facePhoto" accept="image/*" capture="user" required>
+                        
                         <label>Selfie Holding ID Document:</label>
-                        <input type="file" name="selfieWithId" accept="image/*" required>
+                        <input type="file" name="selfieWithId" accept="image/*" capture="user" required>
+                    </div>
 
-                        <button type="button" id="backBtn">Back</button>
-                        <button type="submit">Complete Registration</button>
+                    <div class="button-group">
+                        <button type="button" id="backBtn" class="back-button">Back</button>
+                        <button type="submit" class="submit-button">Complete Registration</button>
+                    </div>
                     </section>
-                </form>
+            </form>
         </section>
         <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/js/intlTelInput.min.js"></script>
         <script src="countries.js"></script>

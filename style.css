@@ -1285,6 +1285,64 @@ footer .social img {
   background: var(--gray-300);
 }
 
+
+
+/*step2 gemini*/
+.step2 h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.file-upload-container label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-300);
+}
+
+/* Diseño de inputs de archivo para que no rompan el estilo Glass */
+input[type="file"] {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed var(--gray-500);
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-light);
+}
+
+/* Grupo de botones del Paso 2 */
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+#backBtn {
+  background: var(--gray-600);
+  flex: 1;
+}
+
+#backBtn:hover {
+  background: var(--gray-700);
+}
+
+.submit-button {
+  background: var(--secondary);
+  flex: 2;
+}
+
 /* ==========================================
    PÁGINAS LEGALES (PRIVACY & TERMS)
    ========================================== */
